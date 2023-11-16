@@ -129,8 +129,7 @@ defmodule GRPC.Client.Adapters.Mint do
        when request_type in [:bidirectional_stream, :server_stream] do
     produce_trailers? = opts[:return_headers] == true
     stream = StreamResponseProcess.build_stream(pid, produce_trailers?)
-        {:ok, stream}
-    end
+    {:ok, stream}
   end
 
   defp do_receive_data(
